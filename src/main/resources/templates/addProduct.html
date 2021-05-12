@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Product</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<i class='fas fa-seedling fa-2x' style="color: #fff;"></i>
+		<h4 style="color: white;">OrganicCrate</h4>
+		&nbsp;
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/products}">ProductList</a></li>
+		</ul>
+		<ul class="navbar-nav ml-auto">
+		<i class='fas fa-home fa-2x' style="color: #fff;"></i>
+			<li class="nav-item active"><a class="nav-link" th:href="@{/}">Home</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/logout}">Logout</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		
+		<h2>Add Product</h2>
+		<form th:action="@{/addProduct}" th:object="${productObj}"
+			method="post">
+			<div class="row">
+				
+				<div class="form-group col-md-8">
+					<label for="pname" class="col-form-label">Product Name</label> <input
+						type="text" th:field="*{pname}" class="form-control" id="pname"
+						placeholder="Enter Product Name" />
+				</div>
+				<div class="form-group col-md-8">
+					<label for="description" class="col-form-label">Product Description</label> <input
+						type="text" th:field="*{description}" class="form-control" id="description"
+						placeholder="Enter Description" />
+				</div>
+				<div class="form-group col-md-8">
+					<label for="price" class="col-form-label">Product Price</label> <input
+						type="text" th:field="*{price}" class="form-control" id="price"
+						placeholder="Enter Price" />
+				</div>
+				<div class="form-group col-md-8">
+					<label for="qty" class="col-form-label">Product Quantity</label> <input
+						type="text" th:field="*{qty}" class="form-control" id="qty"
+						placeholder="Enter Quantity" />
+				</div>
+				<div class="form-group col-md-8">
+					<label for="imgUrl" class="col-form-label">Product Image
+						Url</label> <input type="text" th:field="*{imgUrl}" class="form-control"
+						id="imgUrl" placeholder="Enter Product Image Url" />
+				</div>
+				<div class="form-group col-md-8">
+					<label for="weight" class="col-form-label">Product weight</label> <input
+						type="text" th:field="*{weight}" class="form-control" id="weight"
+						placeholder="Enter Product Weight" />
+				</div>
+				<div class="form-group col-md-8">
+					<!-- <select id="category" name="category" th:field="*{category.cid}"> -->
+
+					<label for="category" class="col-form-label">Category </label> <select
+						id="category" name="cid" class="form-control"
+						th:field="*{category}">
+						<option th:each="cat : ${categoryList}" th:value="${cat.cid}"
+							th:text="${cat.cname}" />
+					</select>
+				</div>
+				
+				<div class="form-group col-md-8">
+					<!-- <select id="category" name="category" th:field="*{category.cid}"> -->
+
+					<label for="disease" class="col-form-label">Disease </label> <select
+						id="disease" name="diseaseId" class="form-control"
+						th:field="*{disease}">
+						<option th:each="dis : ${diseaseList}" th:value="${dis.diseaseId}"
+							th:text="${dis.diseaseName}" />
+					</select>
+				</div>
+
+				<div class="col-md-6">
+					<button type="submit" class="btn btn-primary">Add Product</button>
+				</div>
+			</div>
+		</form>
+		
+	</div>
+</body>
+</html>

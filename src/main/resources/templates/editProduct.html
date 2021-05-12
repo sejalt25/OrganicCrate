@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Product</title>
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<i class='fas fa-seedling fa-2x' style="color: #fff;"></i>
+		<h4 style="color: white;">OrganicCrate</h4>
+		&nbsp;
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/products}">ProductList</a></li>
+		</ul>
+		<ul class="navbar-nav ml-auto">
+		<i class='fas fa-home fa-2x' style="color: #fff;"></i>
+			<li class="nav-item active"><a class="nav-link" th:href="@{/}">Home</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/logout}">Logout</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<h2>Update Product</h2>
+		<form method="POST" th:action="@{/editProduct/{pid}}"
+			th:object="${command}">
+			<input type="hidden" th:field="*{pid}" /> 
+			    Product Name:<input type="text" th:field="*{pname}" placeholder="Enter Product Name"
+				class="form-control mb-4 col-4" readonly>
+				Product Description:<input type="text" th:field="*{description}" placeholder="Enter Description"
+				class="form-control mb-4 col-4">  
+				Product Price:<input type="text" th:field="*{price}" placeholder="Enter Product Price"
+				class="form-control mb-4 col-4"> 
+				Product Quantity:<input type="text" th:field="*{qty}" placeholder="Enter Product Quantity"
+				class="form-control mb-4 col-4"> 
+				Product Image Url: <input type="text" th:field="*{imgUrl}" placeholder="Enter image Url"
+				class="form-control mb-4 col-4"> 
+				Product Weight: <input type="text" th:field="*{weight}" placeholder="Enter weight"
+				class="form-control mb-4 col-4">
+				<input type="hidden" th:field="*{category}" />
+				<input type="hidden" th:field="*{disease}" />
+			    <button type="submit" class="btn btn-info col-2">Update
+				Product</button>
+		</form>
+		<!-- <a th:href="@{/products}"> Back to Product List</a> -->
+	</div>
+</body>
+</html>
+
+
+						

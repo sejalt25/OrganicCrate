@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Organic Crate</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+<style>
+body {
+	background-image: url("/resources/index.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+<div class="container"></div>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<i class='fas fa-seedling fa-spin fa-3x' style="color: #fff;"></i>
+		<h4 style="color: white;">OrganicCrate</h4>
+		&nbsp;
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/aboutus}">AboutUs</a></li>
+		</ul>
+		
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/adminRegistration}">Admin</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/userRegistration}">User</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/patientRegistration}">Patient</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/vendorRegistration}">Vendor</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/login}">Login</a></li>
+		</ul>
+	</nav>
+	<div class="text-center">
+		<h1 style="color: #ffcc00; font-size: 65px;">
+			<b>WELCOME TO ORGANIC CRATE</b>
+			<marquee behavior="scroll" direction="right"
+				style="color: white; font-size: 25px;">
+				<b>Online shopping of Fresh Organic fruits, vegetables and
+					grains</b>
+			</marquee>
+		</h1>
+	</div>
+	
+	<!-- <h1>Welcome ...</h1>
+	<a href="/login">SignIn</a>
+	<a href="/adminRegistration">Add Admin</a>
+	<a href="/patientRegistration">Add Patient</a>
+	<a href="/admin/users">List User</a>
+	<a href="/patient/products">List products</a> -->
+</body>
+</html>

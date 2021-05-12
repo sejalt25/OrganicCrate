@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+</head>
+<body style="background-color:silver;">
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<i class='fas fa-seedling fa-2x' style="color: #fff;"></i>
+		<h4 style="color: white;">OrganicCrate</h4>
+		&nbsp;
+
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active"><a class="nav-link"
+				th:href="@{/patient/category}">Category</a></li>
+		</ul>
+		<ul class="navbar-nav ml-auto">
+			<i class='fas fa-home fa-2x' style="color: #fff;"></i>
+			<li><a class="nav-link" th:href="@{/}">Home</a></li>
+			<li><a class="nav-link" th:href="@{/logout}">Logout</a></li>
+		</ul>
+	</nav>
+	<div class="container text-center">
+	<p>
+	<h1>Welcome User...!!!!
+	</h1>
+	<img alt="welcome" src="/resources/welcome.jpg" width="1200"
+		height="500"/>
+	</p>
+	</div>
+
+
+</body>
+</html>
